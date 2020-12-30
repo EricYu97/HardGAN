@@ -123,10 +123,10 @@ def print_log(epoch, train_psnr, category):
                       0, epoch, 0, train_psnr, 0, 0), file=f)
 
 
-def adjust_learning_rate(optimizer, epoch, category, lr_decay=0.5):
+def adjust_learning_rate(optimizer, epoch, lr_decay=0.5):
 
     # --- Decay learning rate --- #
-    step = 20 if category == 'indoor' else 2000
+    step = 20
 
     if not epoch % step and epoch > 0:
         for param_group in optimizer.param_groups:
